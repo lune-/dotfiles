@@ -1,0 +1,9 @@
+out_to_x no
+out_to_console yes
+update_interval 1.0
+total_run_times 0
+use_spacer none
+own_window_type desktop
+
+TEXT
+ ^i(/home/fujiko/bin/dzicons/cpu.xbm) ^fg(\#a5a5a5)${cpu}%^fg() ^i(/home/fujiko/bin/dzicons/mem.xbm) ^fg(\#a5a5a5)$memperc%^fg() ^i(/home/fujiko/bin/dzicons/bug_01.xbm) ^fg(\#a5a5a5)${running_processes running}^fg() ${if_match ${battery_percent BAT0} >=26}^i(/home/fujiko/bin/dzicons/bat_full_01.xbm)${endif}${if_match ${battery_percent BAT0} <=25}^fg(\#CC0000)^i(/home/fujiko/bin/dzicons/bat_low_01.xbm)^fg()${endif} ^fg(\#a5a5a5)${battery_percent}%^fg() ^i(/home/fujiko/bin/dzicons/fs_02.xbm) ^fg(\#a5a5a5)${fs_used_perc /}%^fg() ^i(/home/fujiko/bin/dzicons/fs_01.xbm) ^fg(\#a5a5a5)${fs_used_perc /home/fujiko}%^fg() ${if_up wlp2s0}^i(/home/fujiko/bin/dzicons/mail.xbm) ^fg(\#a5a5a5)${execpi 120 python /home/fujiko/bin/gmail.py}^fg() ^i(/home/fujiko/bin/dzicons/net_up_03.xbm) ^fg(\#a5a5a5)${upspeedf wlp2s0}^fg() ^i(/home/fujiko/bin/dzicons/net_down_03.xbm) ^fg(\#a5a5a5)${downspeedf wlp2s0}^fg() ${endif} 
